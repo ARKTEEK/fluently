@@ -33,31 +33,8 @@ bars:
     widgets:
       left: ["leftside-group"]
       center: []
-      right:
-        [
-          "systray",
-          "language",
-          "rightside-group",
-          "clock",
-          "power_menu",
-        ]
+      right: ["systray", "language", "rightside-group", "clock", "power_menu"]
 widgets:
-  glazewm_workspaces:
-    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
-    options:
-      offline_label: "GlazeWM Offline"
-      hide_empty_workspaces: false
-      hide_if_offline: false
-      btn_shadow:
-        enabled: false
-        color: "black"
-        radius: 6
-        offset: [1, 1]
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
   leftside-group:
     type: "yasb.grouper.GrouperWidget"
     options:
@@ -67,12 +44,13 @@ widgets:
     type: "yasb.grouper.GrouperWidget"
     options:
       class_name: "rightside-group"
-      widgets: [
-        "volume",
-        "microphone",
-        "update_check",
-        "notifications"
-    ]
+      widgets: ["volume", "microphone", "update_check", "notifications"]
+  glazewm_workspaces:
+    type: "glazewm.workspaces.GlazewmWorkspacesWidget"
+    options:
+      offline_label: "GlazeWM Offline"
+      hide_empty_workspaces: false
+      hide_if_offline: false
   update_check:
     type: "yasb.update_check.UpdateCheckWidget"
     options:
@@ -86,11 +64,6 @@ widgets:
         label: "<span>\uf407</span> {count}"
         interval: 60
         exclude: []
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 3
-        offset: [1, 1]
   systray:
     type: "yasb.systray.SystrayWidget"
     options:
@@ -108,7 +81,7 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "{%a,%H:%M}"
+      label: "{%a %H:%M}"
       label_alt: "<span>\ue0c2</span>{%A %d %B %Y %H:%M}<span>\ue0c0</span>"
       timezones: []
       calendar:
@@ -127,22 +100,8 @@ widgets:
       icons:
         normal: "\uf130"
         muted: "\uf131"
-      mic_menu:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "system"
-        alignment: "right"
-        direction: "down"
       callbacks:
-        on_left: "toggle_mic_menu"
-        on_middle: "toggle_label"
-        on_right: "toggle_mute"
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 3
-        offset: [1, 1]
+        on_left: "toggle_mute"
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
@@ -154,16 +113,6 @@ widgets:
         on_left: "toggle_notification"
         on_right: "do_nothing"
         on_middle: "toggle_label"
-      container_padding:
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 3
-        offset: [1, 1]
   language:
     type: "yasb.language.LanguageWidget"
     options:
@@ -172,8 +121,6 @@ widgets:
       update_interval: 5
       callbacks:
         on_left: "toggle_menu"
-        on_middle: "do_nothing"
-        on_right: "toggle_label"
       language_menu:
         blur: true
         round_corners: true
@@ -185,39 +132,20 @@ widgets:
         offset_left: 0
         show_layout_icon: true
         layout_icon: "\uf11c"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
-      label: "<span>{icon}</span>"
+      label: "<span>{icon}</span> {level}"
       label_alt: "{volume}"
+      mute_text: "0%"
       volume_icons:
         - "\ueee8"
         - "\uf028"
         - "\uf028"
         - "\uf028"
         - "\uf028"
-      audio_menu:
-        blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "System"
-        alignment: "left"
-        direction: "up"
-        offset_top: 6
-        offset_left: 80
       callbacks:
-        on_left: "toggle_volume_menu"
-        on_right: "toggle_mute"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 6
-        offset: [1, 1]
+        on_left: "toggle_mute"
   power_menu:
     type: "yasb.power_menu.PowerMenuWidget"
     options:
@@ -233,8 +161,3 @@ widgets:
         signout: ["\udb80\udf43", "Sign out"]
         sleep: ["\u23fe", "Sleep"]
         cancel: ["", "Cancel"]
-      label_shadow:
-        enabled: false
-        color: "black"
-        radius: 6
-        offset: [1, 1]
