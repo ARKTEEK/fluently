@@ -1,0 +1,1 @@
+Start-Process "$env:USERPROFILE\.glzr\scripts\remap_win_to_F22.ahk"

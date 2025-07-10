@@ -1,0 +1,167 @@
+:root {
+    --text: #ddd;
+    --border: rgba(100, 95, 120, 0.6);
+    --background: rgba(0, 0, 0, 0.45);
+    --foreground: rgba(255, 255, 255, 0.06);
+}
+
+* {
+    font-size: 14px;
+    color: var(--text);
+    font-weight: 600;
+    font-family: "JetBrainsMono NFP";
+}
+
+.yasb-bar {
+    background-color: var(--background);
+}
+
+.widget {
+    padding: 0;
+    margin: 0 4px; 
+}
+
+.icon {
+    font-size: 14px;
+    padding-right: 5px
+}
+
+.widget .label {
+    padding: 0;
+    margin: 0;
+}
+
+/* BORDERED WIDGET CONTAINERS */
+.rightside-group .container, .leftside-group .container, .language-widget .widget-container {
+    background-color: var(--foreground);
+    backdrop-filter: blur(6px);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    margin: 2px 0; 
+}
+
+.rightside-group .widget, .leftside-group .widget {
+    margin: 0;
+    padding: 0 5px;
+}
+
+.leftside-group .container {
+    padding-left: 10px;
+}
+
+/* GLAZEWM WORKSPACES */
+.glazewm-workspaces .ws-btn {
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    padding: 0px 8px;
+    margin: 0;
+    color: var(--text);
+    display: flex;
+    width: 20px;
+    height: 24px;
+}
+
+.glazewm-workspaces .ws-btn.active_populated,
+.glazewm-workspaces .ws-btn.active_empty {
+    background-color: var(--border);
+    border-radius: 3px; 
+    color: var(--text);
+}
+
+.glazewm-workspaces .ws-btn.populated {
+    color: var(--text);
+}
+
+.glazewm-workspaces .ws-btn.empty {
+    color: #7D8B9D;
+}
+
+.glazewm-workspaces .ws-btn:hover {
+    background-color: rgba(87, 82, 114, 0.4);
+    border-radius: 3px;
+    color: var(--text);
+}
+
+/* LANGUAGE WIDGET */
+.language-widget .label {
+    padding-right: 4px;
+}
+
+.language-widget .icon {
+    padding-left: 4px;
+}
+
+/* SYSTRAY */
+.systray .button {
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.systray .button:hover {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.systray .unpinned-visibility-btn {
+    border-radius: 4px;
+    height: 24px;
+    width: 16px;
+}
+
+.systray .unpinned-visibility-btn:hover {
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+/* CLOCK AND CALENDAR */
+.calendar {
+    background-color: rgba(21, 21, 21, 0.4);
+}
+
+.calendar .calendar-table,
+.calendar .calendar-table::item {
+    background-color: rgba(33, 33, 33, 0.736);
+    color: rgba(197, 197, 197, 0.85);
+    font-family: 'Segoe UI';
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+
+.calendar .calendar-table::item:selected {
+    color: rgb(255, 255, 255);
+}
+
+.calendar .day-label {
+    margin-top: 20px;
+}
+
+.calendar .day-label,
+.calendar .month-label,
+.calendar .date-label {
+    font-family: 'Segoe UI';
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.calendar .month-label {
+    font-weight: normal;
+}
+
+.calendar .date-label {
+    font-size: 88px;
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    margin-top: -20px;
+}
+
+/* POWER MENU */
+.power-menu-widget .label {
+    padding-right: 5px;
+}

@@ -1,0 +1,253 @@
+general:
+  startup_commands:
+    ["shell-exec --hide-window powershell %HOMEPATH%/.glzr/start.ps1"]
+  shutdown_commands:
+    ["shell-exec --hide-window powershell %HOMEPATH%/.glzr/exit.ps1"]
+  config_reload_commands: []
+  focus_follows_cursor: false
+  toggle_workspace_on_refocus: false
+  cursor_jump:
+    enabled: true
+    trigger: "monitor_focus"
+  hide_method: "cloak"
+  show_all_in_taskbar: false
+gaps:
+  scale_with_dpi: true
+  inner_gap: "4px"
+  outer_gap:
+    top: "1px"
+    right: "1px"
+    bottom: "1px"
+    left: "1px"
+window_effects:
+  focused_window:
+    border:
+      enabled: false
+      color: "#8dbcff"
+    hide_title_bar:
+      enabled: false
+    corner_style:
+      enabled: false
+      style: "square"
+    transparency:
+      enabled: false
+      opacity: "95%"
+  other_windows:
+    border:
+      enabled: false
+      color: "#a1a1a1"
+    hide_title_bar:
+      enabled: false
+    corner_style:
+      enabled: false
+      style: "square"
+    transparency:
+      enabled: false
+      opacity: "0%"
+window_behavior:
+  initial_state: "tiling"
+  state_defaults:
+    floating:
+      centered: true
+      shown_on_top: false
+    fullscreen:
+      maximized: false
+      shown_on_top: false
+workspaces:
+  - name: "1"
+    bind_to_monitor: 1
+    keep_alive: true
+  - name: "2"
+    bind_to_monitor: 1
+    keep_alive: true
+  - name: "3"
+    bind_to_monitor: 1
+    keep_alive: true
+  - name: "4"
+    bind_to_monitor: 1
+    keep_alive: true
+  - name: "5"
+    bind_to_monitor: 1
+    keep_alive: true
+  - name: "6"
+    bind_to_monitor: 0
+    keep_alive: true
+  - name: "7"
+    bind_to_monitor: 0
+    keep_alive: true
+  - name: "8"
+    bind_to_monitor: 0
+    keep_alive: true
+  - name: "9"
+    bind_to_monitor: 0
+    keep_alive: true
+  - name: "10"
+    bind_to_monitor: 0
+    keep_alive: true
+window_rules:
+  # Move to Workspace 1
+  - commands: ["move --workspace 1"]
+    match:
+      - window_process: { regex: "rustrover64" }
+      - window_process: { regex: "rider64" }
+      - window_process: { regex: "idea64" }
+
+  # Move to Workspace 2
+  - commands: ["move --workspace 2"]
+    match:
+      - window_title: { regex: "^Minecraft" }
+      - window_process: { regex: "Code" }
+      - window_process: { regex: "Obsidian" }
+      - window_process: { regex: "webstorm64" }
+
+  # Move to Workspace 3
+  - commands: ["move --workspace 3"]
+    match:
+      - window_process: { regex: "dbeaver" }
+      - window_process: { regex: "VirtualBoxVM" }
+      - window_process: { regex: "nikke" }
+
+  # Move to Workspace 4
+  - commands: ["move --workspace 4"]
+    match:
+      - window_process: { regex: "Fork" }
+
+  # Move to Workspace 5
+  - commands: ["move --workspace 5"]
+    match:
+      - window_process: { regex: "zen" }
+
+  # Move to Workspace 6
+  - commands: ["move --workspace 6"]
+    match:
+      - window_process: { regex: "Spotify" }
+
+  # Move to Workspace 7
+  - commands: ["move --workspace 7"]
+    match:
+      - window_process: { regex: "Discord" }
+
+  # Toggle Floating Windows
+  - commands: ["toggle-floating"]
+    match:
+      # Java related windows
+      - window_class: { regex: "SunAwtFrame" }
+        window_title: { regex: "Welcome to" }
+      - window_class: { regex: "SunAwtDialog" }
+      # RustRover specific dialogs
+      - window_process: { regex: "rustrover64" }
+        window_title: { regex: "^Local History: .+$" }
+      # VirtualBox related windows
+      - window_title: { regex: "Oracle VirtualBox Manager" }
+      - window_process: { regex: "(?i)VirtualBox" }
+        window_title: { equals: "Oracle VirtualBox User Guide" }
+      - window_process: { regex: "(?i)VirtualBox" }
+        window_title: { equals: "Create Virtual Machine" }
+      - window_process: { regex: "(?i)VirtualBox" }
+        window_title: { equals: "^.*? - Settings" }
+      - window_process: { regex: "(?i)VirtualBox" }
+        window_title: { equals: "Clone Virtual Machine" }
+      # Other applications
+      - window_process: { regex: "xampp-control" }
+      - window_process: { regex: "wezterm-gui" }
+      - window_process: { regex: "OneCommander" }
+      - window_process: { regex: "explorer" }
+      - window_process: { regex: "SystemSettings" }
+
+  # Ignore Windows
+  - commands: ["ignore"]
+    match:
+      # Zen related pop-ups/dialogs
+      - window_process: { equals: "zen" }
+        window_title:
+          { regex: '(?i).*\bExtension:\s*\(Bitwarden\s+Password\s+Manager\).*' }
+      - window_process: { equals: "zen" }
+        window_title: { regex: "Save Image" }
+      - window_process: { equals: "zen" }
+        window_title: { regex: "Enter name of file to save to..." }
+      - window_process: { equals: "zen" }
+        window_class: { equals: "MozillaDialogClass" }
+      - window_process: { equals: "zen" }
+        window_title: { equals: "Library" }
+      - window_process: { equals: "zebar" }
+
+      # Game Launchers
+      - window_process: { regex: "(?i)PrismLauncher" }
+      - window_process: { regex: "nikke_launcher" }
+      - window_process: { regex: "CrashReportClient" }
+
+      # General Applications
+      - window_title: { equals: "Task Manager" }
+      - window_title: { equals: "BreakTimer" }
+      - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
+        window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
+      - window_process: { equals: "PowerToys" }
+        window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+      - window_process: { equals: "PowerToys" }
+        window_title: { regex: ".*? - Peek" }
+      - window_process: { equals: "Lively" }
+        window_class: { regex: "HwndWrapper" }
+      - window_process: { equals: "BCUninstaller" }
+
+      # Riot Games Related
+      - window_process: { regex: "LeagueClient" }
+      - window_process: { regex: "LeagueClientUx" }
+      - window_process: { regex: "LeagueClientUxRender" }
+      - window_process: { regex: "RiotClientServices" }
+      - window_process: { equals: "RiotClientCrashHandler" }
+      - window_process: { equals: "vgc" }
+      - window_process: { equals: "vgtray" }
+      - window_process: { equals: "League of Legends" }
+keybindings:
+  - commands: ["focus --workspace 1"]
+    bindings: ["F22+1"]
+  - commands: ["focus --workspace 2"]
+    bindings: ["F22+2"]
+  - commands: ["focus --workspace 3"]
+    bindings: ["F22+3"]
+  - commands: ["focus --workspace 4"]
+    bindings: ["F22+4"]
+  - commands: ["focus --workspace 5"]
+    bindings: ["F22+5"]
+  - commands: ["focus --workspace 6"]
+    bindings: ["F22+6"]
+  - commands: ["focus --workspace 7"]
+    bindings: ["F22+7"]
+  - commands: ["focus --workspace 8"]
+    bindings: ["F22+8"]
+  - commands: ["focus --workspace 9"]
+    bindings: ["F22+9"]
+  - commands: ["focus --workspace 10"]
+    bindings: ["F22+0"]
+  - commands: ["focus --direction left"]
+    bindings: ["F22+m"]
+  - commands: ["focus --direction right"]
+    bindings: ["F22+,"]
+  - commands: ["focus --direction up"]
+    bindings: ["F22+."]
+  - commands: ["focus --direction down"]
+    bindings: ["F22+/"]
+  - commands: ["move --workspace 1", "focus --workspace 1"]
+    bindings: ["ALT+F22+1"]
+  - commands: ["move --workspace 2", "focus --workspace 2"]
+    bindings: ["ALT+F22+2"]
+  - commands: ["move --workspace 3", "focus --workspace 3"]
+    bindings: ["ALT+F22+3"]
+  - commands: ["move --workspace 4", "focus --workspace 4"]
+    bindings: ["ALT+F22+4"]
+  - commands: ["move --workspace 5", "focus --workspace 5"]
+    bindings: ["ALT+F22+5"]
+  - commands: ["move --workspace 6", "focus --workspace 6"]
+    bindings: ["ALT+F22+6"]
+  - commands: ["move --workspace 7", "focus --workspace 7"]
+    bindings: ["ALT+F22+7"]
+  - commands: ["move --workspace 8", "focus --workspace 8"]
+    bindings: ["ALT+F22+8"]
+  - commands: ["move --workspace 9", "focus --workspace 9"]
+    bindings: ["ALT+F22+9"]
+  - commands: ["move --workspace 10", "focus --workspace 10"]
+    bindings: ["ALT+F22+0"]
+  - commands: ["close"]
+    bindings: ["F22+q"]
+  - commands: ["toggle-floating"]
+    bindings: ["F22+f"]
