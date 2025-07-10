@@ -1,0 +1,76 @@
+watch_config_changes: true
+
+global:
+  border_width: 1
+
+  # border_offset: Offset of the border from the window edges (in pixels)
+  #   - Negative values shrink the border inwards
+  #   - Positive values expand the border outwards
+  border_offset: -1
+
+  # border-radius: Radius of the border's corners. Supported values:
+  #   - Auto: Automatically determine the radius
+  #   - Square: Sharp corners (radius = 0)
+  #   - Round: Fully rounded corners
+  #   - RoundSmall: Slightly rounded corners
+  #   - Or specify any numeric value for a custom radius
+  border_radius: Square
+
+  active_color: "#786EA0"
+  inactive_color: "#33313D"
+
+  animations:
+    active:
+      - type: ReverseSpiral
+        duration: 1800
+        easing: EaseInOutQuad
+
+      - type: Fade
+        duration: 200
+        easing: EaseInOutQuad
+
+    inactive:
+      - type: Spiral
+        duration: 1800
+        easing: EaseInOutQuad
+
+      - type: Fade
+        duration: 200
+        easing: EaseInOutQuad
+
+    fps: 60
+    enabled: False
+
+  initialize_delay: 200
+  unminimize_delay: 150
+
+# Per-application configuration overrides
+window_rules:
+  - match: Class
+    name: "Windows.UI.Core.CoreWindow"
+    enabled: false
+
+  - match: Class
+    name: "XamlExplorerHostIslandWindow"
+    enabled: false
+
+  - match: Title
+    strategy: Contains
+    name: "Zebar"
+    enabled: false
+
+  - match: Title
+    name: "komorebi-bar"
+    enabled: false
+
+  - match: Title
+    name: "keyviz"
+    enabled: false
+
+  - match: Title
+    name: "Picture-in-Picture"
+    enabled: false
+
+  - match: Title
+    name: "Flow.Launcher"
+    enabled: false
