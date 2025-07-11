@@ -7,4 +7,5 @@
 * [Yasb](https://github.com/amnweb/yasb) - highly configurable Windows status bar.
 * [GlazeWM](https://github.com/glzr-io/glazewm) - tiling window manager for Windows inspired by i3wm.
 * [tacky-borders](https://github.com/lukeyou05/tacky-borders) - customizable borders for Windows 11 and 10.
+* [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher) - quick file search and app launcher for Windows.
 ---
