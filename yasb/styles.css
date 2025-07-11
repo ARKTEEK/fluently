@@ -129,14 +129,15 @@ QToolTip {
 
 /* CLOCK AND CALENDAR */
 .calendar {
-    background-color: rgba(21, 21, 21, 0.4);
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 4px;
 }
 
 .calendar .calendar-table,
 .calendar .calendar-table::item {
-    background-color: rgba(33, 33, 33, 0.736);
-    color: rgba(197, 197, 197, 0.85);
-    font-family: 'Segoe UI';
+    background-color: rgba(5, 5, 5, 0.65);
+    color: var(--text);
     margin: 0;
     padding: 0;
     border: none;
@@ -144,7 +145,8 @@ QToolTip {
 }
 
 .calendar .calendar-table::item:selected {
-    color: rgb(255, 255, 255);
+    color: rgb(5, 5, 5);
+    background-color: var(--border);
 }
 
 .calendar .day-label {
@@ -154,9 +156,8 @@ QToolTip {
 .calendar .day-label,
 .calendar .month-label,
 .calendar .date-label {
-    font-family: 'Segoe UI';
     font-size: 16px;
-    color: #fff;
+    color: var(--text);
     font-weight: 700;
     min-width: 180px;
     max-width: 180px;
@@ -169,7 +170,7 @@ QToolTip {
 .calendar .date-label {
     font-size: 88px;
     font-weight: 900;
-    color: rgb(255, 255, 255);
+    color: var(--text);
     margin-top: -20px;
 }
 
@@ -177,3 +178,4 @@ QToolTip {
 .power-menu-widget .label {
     padding-right: 5px;
 }
+

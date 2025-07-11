@@ -87,9 +87,9 @@ widgets:
       calendar:
         blur: true
         round_corners: true
-        offset_top: 10
-        offset_left: 200
-        alignment: "center"
+        offset_top: 5
+        offset_left: 20
+        alignment: "right"
         direction: "up"
   microphone:
     type: "yasb.microphone.MicrophoneWidget"
