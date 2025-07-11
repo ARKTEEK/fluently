@@ -1,5 +1,6 @@
 :root {
     --text: #ddd;
+    --text-red: #ff6b6b;
     --border: rgba(100, 95, 120, 0.6);
     --background: rgba(0, 0, 0, 0.45);
     --foreground: rgba(255, 255, 255, 0.06);
@@ -40,7 +41,9 @@ QToolTip {
 }
 
 /* BORDERED WIDGET CONTAINERS */
-.rightside-group .container, .leftside-group .container, .language-widget .widget-container {
+.rightside-group .container,
+.leftside-group .container,
+.language-widget .widget-container {
     background-color: var(--foreground);
     backdrop-filter: blur(6px);
     border-radius: 4px;
@@ -48,7 +51,8 @@ QToolTip {
     margin: 2px 0; 
 }
 
-.rightside-group .widget, .leftside-group .widget {
+.rightside-group .widget,
+.leftside-group .widget {
     margin: 0;
     padding: 0 5px;
 }
@@ -179,3 +183,64 @@ QToolTip {
     padding-right: 5px;
 }
 
+.power-menu-popup {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 4px; 
+    padding: 10px;
+}
+
+.power-menu-popup .button {
+    padding: 0;
+    width: 180px;
+    height: 230px;
+    background-color: var(--foreground);
+    color: var(--text); 
+    border: 1px solid var(--border);
+    margin: 5px; 
+}
+
+.power-menu-popup .button.hover {
+    background-color: rgba(100, 95, 120, 0.4);
+    color: var(--text); 
+    border: 1px solid var(--text);
+}
+
+.power-menu-popup .button .label {
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text); 
+}
+
+.power-menu-popup .button .icon {
+    font-size: 64px;
+    padding-top: 32px;
+    color: var(--text);
+}
+
+.power-menu-popup .button.cancel .icon {
+    padding: 0;
+    margin: 0;
+}
+
+.power-menu-popup .button.cancel .label {
+    color: var(--text-red); 
+    margin: 0;
+}
+
+.power-menu-popup .button.cancel {
+    height: 32px;
+    background-color: var(--foreground); 
+    border: 1px solid var(--text-red); 
+}
+
+.power-menu-popup .button.cancel.hover {
+    background-color: rgba(255, 107, 107, 0.2);
+    border: 1px solid var(--text-red);
+}
+
+.uptime {
+    font-size: 26px;
+    color: var(--text);
+}
