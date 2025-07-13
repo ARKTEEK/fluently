@@ -1,5 +1,7 @@
 # Fluently - A Windows Rice
-
+> [!WARNING]
+> **This project is a work in progress.** It's under development, and everything may change.
+---
 ## Screenshots
 ![Cover](./assets/main.png)
 
