@@ -11,6 +11,8 @@
   ![Calendar](./assets/calendar.jpg)
   ![Language Menu](./assets/language_menu.jpg)
   ![Power Menu](./assets/power_menu.jpg)
+
+  ![OneCommander](./assets/onecommander.png)
 </details>
 
 --- 
@@ -25,6 +27,7 @@
 | [WezTerm](https://wezfurlong.org/wezterm/) | GPU-accelerated terminal emulator with Lua configuration support. |
 | [Oh My Posh](https://ohmyposh.dev/) | A prompt theme engine for any shell. |
 | [Vencord](https://vencord.dev/) | Discord client mod for theming and plugins. |
+| [OneCommander](https://www.onecommander.com/) | Modern file manager for Windows 10/11. |
 
 ---
 
@@ -34,6 +37,7 @@
 |--------|-------------|
 | Discord | [Fluent Discord](https://github.com/TakosThings/Fluent-Discord) |
 | Mouse Pointer | [Crystal Clear v5](https://www.deviantart.com/biueguy/art/Crystal-Clear-v5-Material-Dark-553375346) |
+| OneCommander | [Mines Dark](https://github.com/vnsrz/mines-dark-OneCommander) |
 
 ---
 
