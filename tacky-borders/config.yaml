@@ -16,9 +16,7 @@ global:
   #   - Or specify any numeric value for a custom radius
   border_radius: Square
 
-  active_color:
-    colors: ["#BFBFBF", "#A0A0A0"]
-    direction: 45deg
+  active_color: "#dcd7ba"
 
   inactive_color:
     colors: ["#5A5A5A", "#626262"]
