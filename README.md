@@ -8,9 +8,9 @@
 <details>
   <summary>More Screenshots</summary>
 
-  ![Calendar](./assets/calendar.jpg)
-  ![Language Menu](./assets/language_menu.jpg)
-  ![Power Menu](./assets/power_menu.jpg)
+  ![Calendar](./assets/calendar.png)
+  ![Language Menu](./assets/language_menu.png)
+  ![Power Menu](./assets/power_menu.png)
 
   ![OneCommander](./assets/onecommander.png)
 </details>
@@ -26,7 +26,6 @@
 | [Flow Launcher](https://github.com/Flow-Launcher/Flow.Launcher) | Quick file and app launcher. |
 | [WezTerm](https://wezfurlong.org/wezterm/) | GPU-accelerated terminal emulator with Lua configuration support. |
 | [Oh My Posh](https://ohmyposh.dev/) | A prompt theme engine for any shell. |
-| [Vencord](https://vencord.dev/) | Discord client mod for theming and plugins. |
 | [OneCommander](https://www.onecommander.com/) | Modern file manager for Windows 10/11. |
 
 ---
