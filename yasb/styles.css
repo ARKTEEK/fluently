@@ -1,28 +1,37 @@
 :root {
-    --text: #ddd;
-    --text-red: #ff6b6b;
-    --border: rgba(100, 95, 120, 0.6);
-    --background: rgba(0, 0, 0, 0.45);
-    --foreground: rgba(255, 255, 255, 0.06);
+    /* Monochrome Base Palette */
+    --mono-bg: #1e1e1e;
+    --mono-ui: #151515;
+    --mono-fg: #e0e0e0;
+    --mono-muted: #888888;
+    --mono-border: #3a3a3a;
+    --mono-accent: #8f8374;
+
+    /* Transparent layers */
+    --bg-transparent: rgba(30, 30, 30, 1);
+    --fg-transparent: rgba(21, 21, 21, 0.3);
+    --border-color: rgba(136, 136, 136, 0.4);
+    --hover-color: rgba(136, 136, 136, 0.25);
+
 }
 
 QToolTip {
     font-size: 12px;
-    color: var(--text);
-    background-color: var(--background);
-    border: 1px solid var(--border);
-    border-radius: 0;
+    color: var(--mono-fg);
+    background-color: var(--bg-transparent);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
 }
 
 * {
     font-size: 14px;
-    color: var(--text);
-    font-weight: 600;
+    color: var(--mono-fg);
+    font-weight: 500;
     font-family: "JetBrainsMono NFP";
 }
 
 .yasb-bar {
-    background-color: var(--background);
+    background-color: var(--bg-transparent);
 }
 
 .widget {
@@ -31,8 +40,7 @@ QToolTip {
 }
 
 .icon {
-    font-size: 14px;
-    padding-right: 5px
+    padding-right: 5px;
 }
 
 .widget .label {
@@ -40,15 +48,15 @@ QToolTip {
     margin: 0;
 }
 
-/* BORDERED WIDGET CONTAINERS */
 .rightside-group .container,
 .leftside-group .container,
 .language-widget .widget-container {
-    background-color: var(--foreground);
+    background-color: var(--fg-transparent);
     backdrop-filter: blur(6px);
     border-radius: 4px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-color);
     margin: 2px 0;
+    padding: 0;
 }
 
 .rightside-group .widget,
@@ -57,12 +65,12 @@ QToolTip {
     padding: 0 5px;
 }
 
-.leftside-group .container {
+/* .leftside-group .container {
     padding-left: 10px;
-}
+} */
 
 .microphone-widget .icon {
-    padding: 0 0;
+    padding: 0;
 }
 
 /* GLAZEWM WORKSPACES */
@@ -70,33 +78,32 @@ QToolTip {
     font-size: 14px;
     background-color: transparent;
     border: none;
-    padding: 0px 8px;
+    padding: 0 8px;
     margin: 0;
-    color: var(--text);
-    display: flex;
+    color: var(--mono-fg);
     width: 20px;
     height: 24px;
 }
 
 .glazewm-workspaces .ws-btn.active_populated,
 .glazewm-workspaces .ws-btn.active_empty {
-    background-color: var(--border);
+    background-color: var(--mono-accent);
     border-radius: 3px;
-    color: var(--text);
+    color: #ffffff;
 }
 
 .glazewm-workspaces .ws-btn.populated {
-    color: var(--text);
+    color: var(--mono-fg);
 }
 
 .glazewm-workspaces .ws-btn.empty {
-    color: #7D8B9D;
+    color: var(--mono-muted);
 }
 
 .glazewm-workspaces .ws-btn:hover {
-    background-color: rgba(87, 82, 114, 0.4);
+    background-color: var(--hover-color);
     border-radius: 3px;
-    color: var(--text);
+    color: var(--mono-fg);
 }
 
 /* LANGUAGE WIDGET */
@@ -115,8 +122,8 @@ QToolTip {
 }
 
 .systray .button:hover {
-    background-color: var(--background);
-    border: 1px solid var(--border);
+    background-color: var(--bg-transparent);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
 }
 
@@ -127,21 +134,21 @@ QToolTip {
 }
 
 .systray .unpinned-visibility-btn:hover {
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
 }
 
 /* CLOCK AND CALENDAR */
 .calendar {
-    background-color: var(--background);
-    border: 1px solid var(--border);
+    background-color: var(--bg-transparent);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
 }
 
 .calendar .calendar-table,
 .calendar .calendar-table::item {
-    background-color: rgba(5, 5, 5, 0.65);
-    color: var(--text);
+    background-color: rgba(30, 30, 30, 0.65);
+    color: var(--mono-fg);
     margin: 0;
     padding: 0;
     border: none;
@@ -149,8 +156,8 @@ QToolTip {
 }
 
 .calendar .calendar-table::item:selected {
-    color: rgb(5, 5, 5);
-    background-color: var(--border);
+    color: var(--mono-bg);
+    background-color: var(--mono-accent);
 }
 
 .calendar .day-label {
@@ -161,7 +168,7 @@ QToolTip {
 .calendar .month-label,
 .calendar .date-label {
     font-size: 16px;
-    color: var(--text);
+    color: var(--mono-fg);
     font-weight: 700;
     min-width: 180px;
     max-width: 180px;
@@ -174,7 +181,7 @@ QToolTip {
 .calendar .date-label {
     font-size: 88px;
     font-weight: 900;
-    color: var(--text);
+    color: var(--mono-fg);
     margin-top: -20px;
 }
 
@@ -184,8 +191,8 @@ QToolTip {
 }
 
 .power-menu-popup {
-    background-color: var(--background);
-    border: 1px solid var(--border);
+    background-color: var(--bg-transparent);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: 10px;
 }
@@ -194,29 +201,29 @@ QToolTip {
     padding: 0;
     width: 180px;
     height: 230px;
-    background-color: var(--foreground);
-    color: var(--text);
-    border: 1px solid var(--border);
+    background-color: var(--fg-transparent);
+    color: var(--mono-fg);
+    border: 1px solid var(--border-color);
     margin: 5px;
 }
 
 .power-menu-popup .button.hover {
-    background-color: rgba(100, 95, 120, 0.4);
-    color: var(--text);
-    border: 1px solid var(--text);
+    background-color: var(--hover-color);
+    color: var(--mono-fg);
+    border: 1px solid var(--mono-fg);
 }
 
 .power-menu-popup .button .label {
     margin-bottom: 8px;
     font-size: 16px;
     font-weight: 500;
-    color: var(--text);
+    color: var(--mono-fg);
 }
 
 .power-menu-popup .button .icon {
     font-size: 64px;
     padding-top: 32px;
-    color: var(--text);
+    color: var(--mono-fg);
 }
 
 .power-menu-popup .button.cancel .icon {
@@ -225,30 +232,30 @@ QToolTip {
 }
 
 .power-menu-popup .button.cancel .label {
-    color: var(--text-red);
+    color: var(--mono-muted);
     margin: 0;
 }
 
 .power-menu-popup .button.cancel {
     height: 32px;
-    background-color: var(--foreground);
-    border: 1px solid var(--text-red);
+    background-color: var(--fg-transparent);
+    border: 1px solid var(--mono-muted);
 }
 
 .power-menu-popup .button.cancel.hover {
-    background-color: rgba(255, 107, 107, 0.2);
-    border: 1px solid var(--text-red);
+    background-color: rgba(136, 136, 136, 0.2);
+    border: 1px solid var(--mono-muted);
 }
 
 .uptime {
     font-size: 26px;
-    color: var(--text);
+    color: var(--mono-fg);
 }
 
 /* LANGUAGE MENU */
 .language-menu {
-    background-color: var(--background);
-    border: 1px solid var(--border);
+    background-color: var(--bg-transparent);
+    border: 1px solid var(--border-color);
     border-radius: 4px;
     padding: 8px;
     backdrop-filter: blur(6px);
@@ -256,15 +263,15 @@ QToolTip {
 
 .language-menu .header,
 .language-menu .footer {
-    color: var(--text);
+    color: var(--mono-fg);
     font-weight: 600;
     font-size: 14px;
     padding: 4px 8px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .language-menu .footer {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-color);
     border-bottom: none;
 }
 
@@ -275,25 +282,25 @@ QToolTip {
     padding: 6px 8px;
     margin: 2px 0;
     border-radius: 3px;
-    color: var(--text);
-    background-color: var(--foreground);
+    color: var(--mono-fg);
+    background-color: var(--fg-transparent);
     transition: background-color 0.2s;
 }
 
 .language-menu .language-item:hover {
-    background-color: rgba(100, 95, 120, 0.4);
+    background-color: var(--hover-color);
 }
 
 .language-menu .language-item.active {
-    background-color: var(--border);
-    border: 1px solid var(--text);
+    background-color: var(--mono-accent);
+    border: 1px solid var(--mono-fg);
 }
 
 .language-menu .language-item .code,
 .language-menu .language-item .icon,
 .language-menu .language-item .name,
 .language-menu .language-item .layout {
-    color: var(--text);
+    color: var(--mono-fg);
     font-weight: 600;
     font-size: 14px;
     padding: 0 4px;
@@ -301,4 +308,90 @@ QToolTip {
 
 .language-menu .language-item .icon {
     font-size: 16px;
+}
+
+/* CONTEXT MENU */
+.context-menu,
+.context-menu .menu-checkbox {
+    background-color: var(--fg-transparent);
+    border: none;
+    padding: 4px 0px;
+    font-size: 12px;
+    color: var(--mono-fg);
+}
+
+.context-menu::right-arrow {
+    width: 8px;
+    height: 8px;
+    padding-right: 24px;
+}
+
+.context-menu::item,
+.context-menu .menu-checkbox {
+    background-color: transparent;
+    padding: 6px 12px;
+    margin: 2px 6px;
+    border-radius: 6px;
+    min-width: 100px;
+}
+
+.context-menu::item:selected,
+.context-menu .menu-checkbox:hover {
+    background-color: var(--mono-ui);
+    color: var(--mono-fg);
+}
+
+.context-menu::separator {
+    height: 1px;
+    background-color: var(--mono-muted);
+    margin: 4px 8px;
+}
+
+.context-menu::item:disabled {
+    color: var(--mono-muted);
+    background-color: transparent;
+}
+
+.context-menu .menu-checkbox .checkbox {
+    border: none;
+    padding: 8px 16px;
+    font-size: 12px;
+    margin: 0;
+    color: var(--mono-fg);
+    font-family: 'Segoe UI';
+}
+
+.context-menu .submenu::item:disabled {
+    margin: 0;
+    padding-left: 16px;
+}
+
+.context-menu .menu-checkbox .checkbox:unchecked {
+    color: var(--mono-muted);
+}
+
+.context-menu .menu-checkbox .checkbox::indicator {
+    width: 12px;
+    height: 12px;
+    margin-left: 0px;
+    margin-right: 8px;
+}
+
+.context-menu .menu-checkbox .checkbox::indicator:unchecked {
+    background: var(--mono-ui);
+    border-radius: 2px;
+}
+
+.context-menu .menu-checkbox .checkbox::indicator:checked {
+    background: var(--mono-accent);
+    border-radius: 2px;
+}
+
+.context-menu .menu-checkbox .checkbox:focus {
+    outline: none;
+}
+
+.context-menu::item:checked {
+    background-color: var(--mono-accent);
+    color: var(--mono-fg);
 }
